@@ -2,10 +2,11 @@
 <ContentPage
     x:Class="anexinettest.Views.Test1Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Count Vowels">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Type a string, this count the Vowels" />
+        <StackLayout Padding="20">
+            <Label FontSize="Large" Text="Type a string, this count the Vowels" />
             <Entry x:Name="vowelsText" />
             <Button
                 Command="{Binding VowelsTextCommand}"

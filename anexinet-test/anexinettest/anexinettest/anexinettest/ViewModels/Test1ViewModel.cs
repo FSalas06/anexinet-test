@@ -27,37 +27,36 @@ namespace anexinettest.ViewModels
 
         private void VowelsTextCommandExecute(string obj)
         {
-            if(string.IsNullOrEmpty(obj))
-            {
-                VowelsText = "Please instert a value";
-            }
-            else
-            {
-                VowelsText = $"Number of vowels: {CountVowels(obj)}";
-            }
-            
-        }
-
-        private int CountVowels(string somestring)
-        {
             try
-            {
-                string str = Regex.Replace(somestring.ToLower(), @"s", "");
-                int v = 0;
-                foreach(var s in str)
+            { 
+                if(string.IsNullOrEmpty(obj))
                 {
-                    if (s.Equals('a') || s.Equals('e') || s.Equals('i') || s.Equals('o') || s.Equals('o'))
-                    {
-                        v++;
-                    }
+                    VowelsText = "Please instert a value";
                 }
-                return v;
+                else
+                {
+                    VowelsText = $"Number of vowels: {CountVowels(obj)}";
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("An Error : " + ex.Message);
-                return 0;
+                VowelsText = "An Error occurs :(";
             }
+        }
+
+        private int CountVowels(string somestring)
+        {
+            string str = Regex.Replace(somestring.ToLower(), @"s", "");
+            int v = 0;
+            foreach(var s in str)
+            {
+                if (s.Equals('a') || s.Equals('e') || s.Equals('i') || s.Equals('o') || s.Equals('o'))
+                {
+                    v++;
+                }
+            }
+            return v;
         }
     }
 }

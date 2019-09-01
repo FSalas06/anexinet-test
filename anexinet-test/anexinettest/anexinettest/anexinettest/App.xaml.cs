@@ -11,7 +11,7 @@ namespace anexinettest
         {
             InitializeComponent();
 
-            MainPage = new Test1Page();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

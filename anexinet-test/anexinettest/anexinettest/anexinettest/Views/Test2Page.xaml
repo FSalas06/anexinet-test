@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="anexinettest.Views.Test2Page"
+             Title="Get Minutes">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Get difference between dates in minutes" FontSize="Large"/>
+            <DatePicker Date="{Binding FirstDate}"
+                        Format="D"/>
+            <DatePicker Date="{Binding LastDate}"
+                        MinimumDate="{Binding FirstDate}"
+                        Format="D"/>
+            <Button Text="Get difference" Command="{Binding GetDifferenceCommand}"/>
+
+            <Label Text="{Binding MinutesDifferenceText}" FontSize="Large" TextColor="Blue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
