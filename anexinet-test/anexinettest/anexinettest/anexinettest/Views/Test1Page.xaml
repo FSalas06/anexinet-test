@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="anexinettest.Views.Test1Page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Type a string, this count the Vowels" />
+            <Entry x:Name="vowelsText" />
+            <Button
+                Command="{Binding VowelsTextCommand}"
+                CommandParameter="{Binding Source={x:Reference vowelsText}, Path=Text}"
+                Text="Count Vowels" />
+            <Label Text="{Binding VowelsText}" TextColor="Blue" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
